@@ -7,7 +7,7 @@ module.exports = class Ping extends Commands {
         });
     }
 
-    async run(msg) {
-        return msg.channel.send(`Pong! ${this.client.ws.ping}ms.`);
+    async run(message) {
+        return message.channel.send(`Pong! ${this.client.ws.ping}ms.`);
     }
 };
