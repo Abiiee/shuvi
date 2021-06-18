@@ -25,18 +25,18 @@ module.exports = class Message extends Events {
             if(userDB.xp >= necesario) {
                 userDB.xp = 0
                 userDB.nivel += 1
-                const respuesta = [
+                let respuesta = [
                     `**${message.member.displayName}**, ¡has subido al nivel **${userDB.nivel}**! Sigue así.`,
                     `**${message.member.displayName}**, ha subido al nivel **${userDB.nivel}**, quiza el sea el elegido.`,
                     `**${message.member.displayName}** has subido al nivel **${userDB.nivel}**, no pares de subir.`,
                     `**${message.member.displayName}** sigue obteniendo más y más niveles, ahora es nivel **${userDB.nivel}**.`,
                     `**${message.member.displayName}**, has subido al nivel **${userDB.nivel}**, todos confiamos en que seguiras subiendo.`
                 ][Math.floor(Math.random() * 5)]
-                const recompenza = this.client.levelRoles.find(c => c.nivel == userDB.nivel)
-                if(recompenza) {
-                    await message.member.roles.add(recompenza.role).catch(() => {})
+                const recompensa = this.client.levelRoles.find(c => c.nivel == userDB.nivel)
+                if(recompensa) {
+                    await message.member.roles.add(recompensa.role).catch(() => {})
                     await message.member.roles.remove('854844011868454932').catch(() => {})
-                    respuesta += `\n\n**Extra:** Consiguio el rol de prestigio **<@&${recompenza.role}>**.`
+                    respuesta += `\n\n**Extra:** Consiguio el rol de prestigio **<@&${recompensa.role}>**.`
                 }
                 message.channel.send({
                     content: respuesta,

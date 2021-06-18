@@ -20,7 +20,6 @@ module.exports = class Bot extends Client {
         this.commands = new Commands(this)
         this.commands.load()
         this.devs = process.env.DEVS ? process.env.DEVS.split(', ') : [];
-        this.login(process.env.BOT_TOKEN)
         this.levelRoles = [
             { nivel: 2, role: '854798921973104640' }, { nivel: 4, role: '854798695408599070' },
             { nivel: 6, role: '854798497294450739' }, { nivel: 10, role: '854798018548203561' },
@@ -31,6 +30,7 @@ module.exports = class Bot extends Client {
             { nivel: 70, role: '854792688364945430' }, { nivel: 80, role: '854791880268316702' },
             { nivel: 100, role: '854791336586117160' }
         ]
+        this.login(process.env.BOT_TOKEN)
         
         /*{
             '2': '854798921973104640',
