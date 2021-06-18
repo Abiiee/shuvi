@@ -11,7 +11,7 @@ module.exports = class Ready extends Events {
         if (member.user.bot) {
             await member.roles.add('854744769887338537').catch(() => { })
         } else {
-            const channel = this.client.channels.fetch('854855767194992640').catch(() => {})
+            const channel = await this.client.channels.fetch('854855767194992640').catch(() => {})
             if(channel) channel.send([
                 `Contaba la leyenda que un usuario entró épicamente al servidor, parece que ${member} es real.`,
                 `${member} ¡Creo que eres el usuario que estábamos buscando, Bienvenido!`,
