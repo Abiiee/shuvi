@@ -1,4 +1,4 @@
-const { Collection } = require('discord.js-light')
+const { Collection } = require('discord.js')
 const Command = require('../structures/Command')
 const { readdirSync, statSync } = require('fs')
 const { join } = require('path')

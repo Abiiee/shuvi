@@ -1,5 +1,5 @@
-const { Message, Collection } = require('discord.js-light')
-
+const { Message, Collection } = require('discord.js')
+const ms = require('@fabricio-191/ms')
 module.exports = class Command { 
     constructor(client, options) {
         this.client = client
@@ -29,7 +29,7 @@ module.exports = class Command {
     canRun(message) {
         if (message.guild && !message.channel.permissionsFor(message.guild.me).has('SEND_MESSAGES')) return false;
         if (this.devsOnly && !this.client.devs.includes(message.author.id)) return false;
-        if (this.checkCooldowns(message)) return !message.channel.send(`Estas en cooldown, espera para poder ejecutar nuevamente el comando`);
+        if (this.checkCooldowns(message)) return !message.channel.send(`Estas en cooldown, espera **${ms(Math.ceil((this.cooldowns.get(message.author.id) - Date.now()) / 1000) * 1000, { language: 'es' })}** para poder ejecutar nuevamente el comando`);
         if (!this.enabled && !this.client.devs.includes(message.author.id)) return !message.channel.send('Este comando se encuentra en mantenimiento');
         if (this.guildOnly && !message.guild) return !message.channel.send('Este comando solo puede ejecutarse en servidores.');
         if (message.guild && !message.channel.nsfw && this.nsfwOnly) return !message.channel.send('Este comando solo puede ejecutarse en canales NSFW.');

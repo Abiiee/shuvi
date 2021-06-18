@@ -1,21 +1,11 @@
-const { Client, Intents } = require('discord.js-light')
+const { Client } = require('discord.js')
 const { connect } = require('mongoose');
 const Commands = require('./Commands')
 const Events = require('./Events')
 module.exports = class Bot extends Client {
     constructor() {
         super({
-            /* Intents necesarios por ustedes por defecto por defecto servidores y mensajes de servidores. */
-            intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
-            /* Las siguientes lineas deben activarlas o desactivarlas depende de lo que necesiten */
-            cacheRoles: true,
-            cacheGuilds: true,
-            cacheEmojis: false,
-            cacheMembers: true,
-            cacheChannels: true,
-            cachePresences: false,
-            cacheOverwrites: true,
-            messageCacheMaxSize: 20,
+            intents: 32767
         })
         connect(process.env.MONGO_URL, {
             useCreateIndex: true,

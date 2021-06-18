@@ -1,7 +1,7 @@
 # Discord Bot Template
 En pocas palabras hice esto para poder ayudar a personas que andan iniciando un proyecto, con conocimientos basicos de JavaScript.
 
-Hice este template con la versión master de `discord.js-light` por lo que puede haber errores en el futuro, de todas maneras la actualizaré en el transcurso del tiempo
+Hice este template con la versión master de `discord.js` por lo que puede haber errores en el futuro, de todas maneras la actualizaré en el transcurso del tiempo
 
 El uso es sencillo, puedes modificarlo a tu gusto, pero esta hecho con una base que consideraria buena.
 

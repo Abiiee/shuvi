@@ -1,6 +1,6 @@
 const Events = require('../../structures/Event')
 const Niveles = require('../../database/niveles')
-const { Collection } = require('discord.js-light')
+const { Collection } = require('discord.js')
 module.exports = class Message extends Events {
     constructor(client) {
         super(client, {
@@ -35,6 +35,7 @@ module.exports = class Message extends Events {
                 const recompenza = this.client.levelRoles.find(c => c.nivel == userDB.nivel)
                 if(recompenza) {
                     await message.member.roles.add(recompenza.role).catch(() => {})
+                    await message.member.roles.remove('854844011868454932').catch(() => {})
                     respuesta += `\n\n**Extra:** Consiguio el rol de prestigio **<@&${recompenza.role}>**.`
                 }
                 message.channel.send({

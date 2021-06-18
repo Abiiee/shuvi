@@ -1,6 +1,6 @@
 const Commands = require('../../structures/Command');
 const Niveles = require('../../database/niveles');
-const { MessageEmbed } = require('discord.js-light');
+const { MessageEmbed } = require('discord.js');
 const rank = require('../../utils/lb-rank')
 module.exports = class Rank extends Commands {
     constructor(client) {

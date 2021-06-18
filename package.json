@@ -1,7 +1,7 @@
 {
-  "name": "sagara",
+  "name": "shuvi",
   "version": "1.0.0",
-  "description": "Plantilla simple para un bot de discord usando discord.js-light",
+  "description": "Plantilla simple para un bot de discord usando discord.js",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js"
@@ -10,7 +10,8 @@
   "author": "AviiiCD",
   "license": "MIT",
   "dependencies": {
-    "discord.js-light": "github:timotejroiko/discord.js-light",
+    "@fabricio-191/ms": "*",
+    "discord.js": "github:discordjs/discord.js",
     "dotenv": "^10.0.0",
     "mongoose": "^5.12.14"
   },
