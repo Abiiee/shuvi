@@ -20,7 +20,7 @@ module.exports = class Message extends Events {
             if(this.checkNivelCooldown(message.author.id)) return;
             let userDB = await Niveles.findOne({ id: message.author.id })
             if(!userDB) userDB = new Niveles({ id: message.author.id })
-            userDB.xp += (Math.floor(Math.random() * 30) + 5) * 2
+            userDB.xp += (Math.floor(Math.random() * 20) + 20) * 2
             const necesario = 250 * (userDB.nivel) * 2
             if(userDB.xp >= necesario) {
                 userDB.xp = 0
