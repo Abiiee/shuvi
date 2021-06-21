@@ -6,7 +6,7 @@ module.exports = class Rank extends Commands {
     constructor(client) {
         super(client, {
             name: 'rank',
-            aliases: 'rk'
+            aliases: ['rk']
         });
     }
 
